@@ -1,9 +1,6 @@
 package io.nasa.userManagement.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,11 +12,16 @@ import lombok.Setter;
 public class UserEntity {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name ="username")
     private String userName;
+    @Column(name ="firstname")
     private String firstName;
+    @Column(name ="lastname")
     private String lastName;
+    @Column(name ="email")
     private String email;
+    @Column(name ="password")
     private String passWord;
 }
